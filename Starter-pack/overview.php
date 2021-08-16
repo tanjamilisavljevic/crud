@@ -14,7 +14,7 @@
 <ul>
     <?php foreach ($cards as $card) : ?>
         <li><?= $card['name'] ?></li>
-        <li><?= $card['name'] . " is " . $card['color'] ?></li>
+        <li><?= "Color: " . $card['color'] ?></li>
     <?php endforeach; ?>
 </ul>
 

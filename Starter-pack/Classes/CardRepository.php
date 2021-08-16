@@ -13,19 +13,19 @@ class CardRepository
         $this->databaseManager = $databaseManager;
     }
 
-    public function create()
+    public function create(): void
     {
 
     }
 
     // Get one
-    public function find()
+    public function find(): array
     {
 
     }
 
     // Get all
-    public function get()
+    public function get(): array
     {
         // done: replace dummy data by real one
         $sql = 'SELECT * FROM cards';
@@ -37,12 +37,12 @@ class CardRepository
         // return $this->databaseManager->connection-> (runYourQueryHere)
     }
 
-    public function update()
+    public function update(): void
     {
 
     }
 
-    public function delete()
+    public function delete(): void
     {
 
     }
