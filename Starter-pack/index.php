@@ -21,6 +21,15 @@ $databaseManager->connect();
 $cardRepository = new CardRepository($databaseManager);
 $cards = $cardRepository->get();
 
+if (!isset($_POST['submit']))
+{$endMessage = '';}
+else {
+$createWorked = $cardRepository->create();
+if (!$createWorked) {
+    $endMessage= "Error.";
+}
+}
+
 // Load your view
 // Tip: you can load this dynamically and based on a variable, if you want to load another view
 require 'overview.php';

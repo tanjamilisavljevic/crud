@@ -6,6 +6,7 @@
 class CardRepository
 {
     private $databaseManager;
+    public $endMessage = '';
 
     // This class needs a database connection to function
     public function __construct(DatabaseManager $databaseManager)
@@ -13,9 +14,18 @@ class CardRepository
         $this->databaseManager = $databaseManager;
     }
 
-    public function create(): void
+    public function create(): bool
     {
-
+        if (isset($_POST['submit']) && !empty($_POST['name']) && !empty($_POST['color']))
+        {
+            $addedPokemonName = $_POST['name'];
+            $addedPokemonColor = $_POST['color'];
+            $sql = "INSERT INTO cards(name, color) VALUES('$addedPokemonName','$addedPokemonColor')";
+            return true;
+        }
+        else {
+            return false;
+        }
     }
 
     // Get one
