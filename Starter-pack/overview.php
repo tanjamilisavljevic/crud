@@ -18,5 +18,17 @@
     <?php endforeach; ?>
 </ul>
 
+<form action="" method="post">
+
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name">
+
+
+        <label for="color">Color:</label>
+        <input type="text" name="color" id="color">
+
+    <button type="submit" value="Submit"> Add to cards </button>
+</form>
+
 </body>
 </html>

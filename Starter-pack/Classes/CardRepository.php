@@ -25,7 +25,7 @@ class CardRepository
     }
 
     // Get all
-    public function get(): array
+    public function get()
     {
         // done: replace dummy data by real one
         $sql = 'SELECT * FROM cards';
