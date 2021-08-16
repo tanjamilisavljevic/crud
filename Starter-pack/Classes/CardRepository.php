@@ -21,6 +21,7 @@ class CardRepository
             $addedPokemonName = $_POST['name'];
             $addedPokemonColor = $_POST['color'];
             $sql = "INSERT INTO cards(name, color) VALUES('$addedPokemonName','$addedPokemonColor')";
+            $this->databaseManager->connection->query($sql);
             return true;
         }
         else {
@@ -39,7 +40,7 @@ class CardRepository
     {
         // done: replace dummy data by real one
         $sql = 'SELECT * FROM cards';
-        $result = $this->databaseManager->connect()->query($sql);
+        $result = $this->databaseManager->connection->query($sql);
 
         return $result;
 

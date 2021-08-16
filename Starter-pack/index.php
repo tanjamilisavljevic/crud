@@ -12,6 +12,21 @@ error_reporting(E_ALL);
 require_once 'config.php';
 require_once 'classes/DatabaseManager.php';
 require_once 'classes/CardRepository.php';
+function whatIsHappening()
+{
+    echo '<pre>';
+    echo '<h2>$_GET</h2>';
+    var_dump($_GET);
+    echo '<h2>$_POST</h2>';
+    var_dump($_POST);
+    echo '<h2>$_COOKIE</h2>';
+    var_dump($_COOKIE);
+    echo '<h2>$_SESSION</h2>';
+    var_dump($_SESSION);
+    echo '</pre>';
+}
+
+whatIsHappening();
 
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password'], $config['dbname']);
 $databaseManager->connect();
@@ -19,16 +34,18 @@ $databaseManager->connect();
 // This example is about a Pokémon card collection
 // Update the naming if you'd like to work with another collection
 $cardRepository = new CardRepository($databaseManager);
-$cards = $cardRepository->get();
 
-if (!isset($_POST['submit']))
-{$endMessage = '';}
-else {
 $createWorked = $cardRepository->create();
-if (!$createWorked) {
-    $endMessage= "Error.";
+if (isset($_POST['submit'])) {
+
+    if (!$createWorked) {
+        $endMessage = "Error.";
+    } else {
+        $endMessage = "Success.";
+    }
 }
-}
+
+$cards = $cardRepository->get();
 
 // Load your view
 // Tip: you can load this dynamically and based on a variable, if you want to load another view
