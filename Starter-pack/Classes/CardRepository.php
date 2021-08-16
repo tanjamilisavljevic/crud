@@ -6,7 +6,6 @@
 class CardRepository
 {
     private $databaseManager;
-    public $endMessage = '';
 
     // This class needs a database connection to function
     public function __construct(DatabaseManager $databaseManager)
