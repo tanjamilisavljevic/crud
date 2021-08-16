@@ -27,11 +27,11 @@ class CardRepository
     // Get all
     public function get()
     {
-        // TODO: replace dummy data by real one
-        return [
-            ['name' => 'dummy one'],
-            ['name' => 'dummy two'],
-        ];
+        // done: replace dummy data by real one
+        $sql = 'SELECT * FROM cards';
+        $result = $this->databaseManager->connect()->query($sql);
+
+        return $result;
 
         // We get the database connection first, so we can apply our queries with it
         // return $this->databaseManager->connection-> (runYourQueryHere)
