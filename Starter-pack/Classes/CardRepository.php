@@ -19,7 +19,7 @@ class CardRepository
         {
             $addedPokemonName = $_POST['name'];
             $addedPokemonColor = $_POST['color'];
-            $sql = "INSERT INTO cards(name, color) VALUES('$addedPokemonName','$addedPokemonColor')";
+            $sql = "INSERT INTO cards (name, color) VALUES ('$addedPokemonName', '$addedPokemonColor' )";
             $this->databaseManager->connection->query($sql);
             return true;
         }

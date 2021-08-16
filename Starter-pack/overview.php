@@ -27,7 +27,7 @@
         <label for="color">Color:</label>
         <input type="text" name="color" id="color">
 
-    <button type="submit" value="submit" name="submit"> Add to cards </button>
+    <input type="submit" value="Add new pokemon" name="submit">
     <?php if (!empty($endMessage)) : ?>
         <p> <?php echo $endMessage ?> </p>
     <?php endif; ?>
