@@ -23,8 +23,8 @@ function whatIsHappening()
     var_dump($_POST);
     echo '<h2>$_COOKIE</h2>';
     var_dump($_COOKIE);
-    echo '<h2>$_SESSION</h2>';
-    var_dump($_SESSION);
+//    echo '<h2>$_SESSION</h2>';
+//    var_dump($_SESSION);
     echo '</pre>';
 }
 
@@ -53,9 +53,13 @@ if (empty($_GET))
     }
     require 'overview.php';
 }
-else
+else if (isset($_GET['action']) && $_GET['action'] == 'edit')
 {
     require 'edit.php';
+}
+else
+{
+    require 'delete.php';
 }
 
 // Load your view

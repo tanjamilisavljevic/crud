@@ -53,9 +53,10 @@ class CardRepository
         $this->databaseManager->connection->query($sql);
     }
 
-    public function delete(): void
+    public function delete($oldName): void
     {
-
+        $sql = "DELETE FROM cards WHERE name=('$oldName');";
+        $this->databaseManager->connection->query($sql);
     }
 
 }

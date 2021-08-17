@@ -15,7 +15,8 @@
     <?php foreach ($cards as $card) : ?>
         <li><?= $card['name'] ?></li>
         <li><?= "Color: " . $card['color'] ?></li>
-        <a href="index.php?selectedPokemon=<?php echo $card['name']; ?>">Edit pokemon</a>
+        <a href="index.php?selectedPokemon=<?php echo $card['name']; ?>&action=edit" class="edit" id="edit" >Edit pokemon</a>
+        <a href="index.php?selectedPokemon=<?php echo $card['name']; ?>&action=delete" class="delete" id="delete">Delete pokemon</a>
     <?php endforeach; ?>
 
 </ul>
