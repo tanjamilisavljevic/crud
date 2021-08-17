@@ -15,7 +15,7 @@
     <?php foreach ($cards as $card) : ?>
         <li><?= $card['name'] ?></li>
         <li><?= "Color: " . $card['color'] ?></li>
-        <input type="submit" value="Edit pokemon" name="edit">
+        <a href="edit.php">Edit pokemon</a>
     <?php endforeach; ?>
 
 </ul>
