@@ -15,7 +15,9 @@
     <?php foreach ($cards as $card) : ?>
         <li><?= $card['name'] ?></li>
         <li><?= "Color: " . $card['color'] ?></li>
+        <input type="submit" value="Edit pokemon" name="edit">
     <?php endforeach; ?>
+
 </ul>
 
 <form action="" method="post">
