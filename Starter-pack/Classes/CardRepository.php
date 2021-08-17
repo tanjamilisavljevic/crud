@@ -47,9 +47,10 @@ class CardRepository
         // return $this->databaseManager->connection-> (runYourQueryHere)
     }
 
-    public function update(): void
+    public function update($newName, $newColor, $oldName): void
     {
-
+        $sql = "UPDATE cards SET name=('$newName'), color=('$newColor') WHERE name=('$oldName')";
+        $this->databaseManager->connection->query($sql);
     }
 
     public function delete(): void

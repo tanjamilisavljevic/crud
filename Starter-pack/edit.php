@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport"
@@ -12,17 +12,28 @@
 
 <form action="" method="post">
 
-    <label for="name">Name:</label>
-    <input type="text" name="name" id="name">
+    <label for="newName">New name:</label>
+    <input type="text" name="newName" id="newName">
 
 
-    <label for="color">Color:</label>
-    <input type="text" name="color" id="color">
+    <label for="newColor">New color:</label>
+    <input type="text" name="newColor" id="newColor">
 
-    <input type="submit" value="Update pokemon" name="update">
-<!--    --><?php //if (!empty($endMessage)) : ?>
-<!--        <p> --><?php //echo $endMessage ?><!-- </p>-->
-<!--    --><?php //endif; ?>
+    <input type="submit" name="updatePokemon">
+
+
+    <?php
+    if (isset($_POST['updatePokemon'])) {
+        if (isset($_POST['updatePokemon']) && !empty($_POST['newName']) && !empty($_POST['newColor'])) {
+            $cardRepository->update($_POST['newName'], $_POST['newColor'], $_GET['selectedPokemon']);
+            echo "Success!";
+            ?> <br> <a href="index.php"> Go back </a>
+            <?php
+        } else {
+            echo "Fill in all the fields.";
+        }
+    }
+    ?>
 
 </form>
 </body>

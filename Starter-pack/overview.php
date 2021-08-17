@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,19 +15,19 @@
     <?php foreach ($cards as $card) : ?>
         <li><?= $card['name'] ?></li>
         <li><?= "Color: " . $card['color'] ?></li>
-        <a href="edit.php?selectedPokemon=<?php echo $card['name']; ?>">Edit pokemon</a>
+        <a href="index.php?selectedPokemon=<?php echo $card['name']; ?>">Edit pokemon</a>
     <?php endforeach; ?>
 
 </ul>
 
 <form action="" method="post">
 
-        <label for="name">Name:</label>
-        <input type="text" name="name" id="name">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name">
 
 
-        <label for="color">Color:</label>
-        <input type="text" name="color" id="color">
+    <label for="color">Color:</label>
+    <input type="text" name="color" id="color">
 
     <input type="submit" value="Add new pokemon" name="submit">
     <?php if (!empty($endMessage)) : ?>

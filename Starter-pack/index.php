@@ -12,7 +12,7 @@ error_reporting(E_ALL);
 require_once 'config.php';
 require_once 'classes/DatabaseManager.php';
 require_once 'classes/CardRepository.php';
-//require_once 'edit.php';
+
 
 function whatIsHappening()
 {
@@ -38,17 +38,26 @@ $databaseManager->connect();
 $cardRepository = new CardRepository($databaseManager);
 
 $createWorked = $cardRepository->create();
-if (isset($_POST['submit'])) {
 
-    if (!$createWorked) {
-        $endMessage = "Error.";
-    } else {
-        $endMessage = "Success.";
-    }
-}
 
 $cards = $cardRepository->get();
 
+if (empty($_GET))
+{
+    if (isset($_POST['submit'])) {
+        if (!$createWorked) {
+            $endMessage = "Error.";
+        } else {
+            $endMessage = "Success.";
+        }
+    }
+    require 'overview.php';
+}
+else
+{
+    require 'edit.php';
+}
+
 // Load your view
 // Tip: you can load this dynamically and based on a variable, if you want to load another view
-require 'overview.php';
+//require 'overview.php';
