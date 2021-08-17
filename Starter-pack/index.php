@@ -12,6 +12,8 @@ error_reporting(E_ALL);
 require_once 'config.php';
 require_once 'classes/DatabaseManager.php';
 require_once 'classes/CardRepository.php';
+require_once 'edit.php';
+
 function whatIsHappening()
 {
     echo '<pre>';
