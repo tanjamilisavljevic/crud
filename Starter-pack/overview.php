@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
     <?php foreach ($cards as $card) : ?>
         <li><?= $card['name'] ?></li>
         <li><?= "Color: " . $card['color'] ?></li>
-        <a href="edit.php">Edit pokemon</a>
+        <a href="edit.php?selectedPokemon=<?php echo $card['name']; ?>">Edit pokemon</a>
     <?php endforeach; ?>
 
 </ul>
