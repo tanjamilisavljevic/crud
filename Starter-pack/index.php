@@ -27,8 +27,8 @@ function whatIsHappening()
 //    var_dump($_SESSION);
     echo '</pre>';
 }
-
-whatIsHappening();
+//
+//whatIsHappening();
 
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password'], $config['dbname']);
 $databaseManager->connect();

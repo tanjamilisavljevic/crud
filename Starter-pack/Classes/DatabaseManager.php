@@ -22,7 +22,7 @@ class DatabaseManager
         $this->dbname = $dbname;
     }
 
-    public function connect() :PDO
+    public function connect(): PDO
     {
         // done: make the connection to the database
         $dsn = 'mysql:host=' . $this->host . ';dbname=' . $this->dbname;

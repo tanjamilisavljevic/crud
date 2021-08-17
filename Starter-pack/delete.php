@@ -21,9 +21,7 @@
 if (isset($_POST['deletePokemon'])) {
     $cardRepository->delete($_GET['selectedPokemon']);
     echo "Deleted!";
-    ?> <br> <a href="index.php"> Go back </a>
-    <?php
-};
+}
 ?>
 
 

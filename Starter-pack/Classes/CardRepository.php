@@ -15,15 +15,13 @@ class CardRepository
 
     public function create(): bool
     {
-        if (isset($_POST['submit']) && !empty($_POST['name']) && !empty($_POST['color']))
-        {
+        if (isset($_POST['submit']) && !empty($_POST['name']) && !empty($_POST['color'])) {
             $addedPokemonName = $_POST['name'];
             $addedPokemonColor = $_POST['color'];
             $sql = "INSERT INTO cards (name, color) VALUES ('$addedPokemonName', '$addedPokemonColor' )";
             $this->databaseManager->connection->query($sql);
             return true;
-        }
-        else {
+        } else {
             return false;
         }
     }
