@@ -23,12 +23,16 @@
 
 
     <?php
-    if (isset($_POST['updatePokemon'])) {
+    if (isset($_POST['updatePokemon']))
+    {
         if (isset($_POST['updatePokemon']) && !empty($_POST['newName']) && !empty($_POST['newColor'])) {
+
             $cardRepository->update($_POST['newName'], $_POST['newColor'], $_GET['selectedPokemon']);
             echo "Success!";
+
             ?> <br> <a href="index.php"> Go back </a>
             <?php
+
         } else {
             echo "Fill in all the fields.";
         }
